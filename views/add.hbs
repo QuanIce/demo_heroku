@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Add New Product</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+     {{!-- START NAV --}}
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">ATN Store</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                 <li><a href="/add">Create Products</a></li>
+            </ul>
+            <form class="navbar-form navbar=left" action="/search" method="post">
+                <input type="text" class="form-control rounded" name="txtName" placeholder="Search for product" aria-label="Search" aria-describedby="search-addon" />
+                <button type="submit" class="btn btn-outline-primary" value ="Search">Search</button>
+            </form>
+        </div>
+    </nav>
+    {{!-- END NAV --}}
+
+    <h1>Create a new product</h1>
+    <div class="table-responsive" style="margin: 20px;">
+        <form action="/add" method="POST">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="txtName" required> 
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" class="form-control" id="price" name="txtPrice">
+        </div>
+
+        <div class="form-group">
+            <label for="picture">Picture</label>
+            <input type="text" class="form-control" id="picture" name="txtPicture">
+        </div>
+          <input type="submit" value="Create Product" class="btn btn-primary">
+        </form>
+    </div> 
+</body>
+</html>
