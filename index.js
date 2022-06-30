@@ -58,17 +58,17 @@ app.post('/search', async(req,res)=>{
     res.render('home',{'product':products})
 })
 
-app.post('/ascending', async(req,res)=>{
-    let sortPrice = req.body.price
+// app.post('/ascending', async(req,res)=>{
+//     let sortPrice = req.body.price
 
-    let server = await MongoClient.connect(url)
+//     let server = await MongoClient.connect(url)
 
-    let dbo = server.db("ATNToys")
+//     let dbo = server.db("ATNToys")
 
-    let results = await dbo.collection('product').find({'name': new RegExp(sortPrice,'i')}).sort({'price':1}).toArray()
+//     let results = await dbo.collection('product').find({'name': new RegExp(sortPrice,'i')}).sort({'price':1}).toArray()
 
-    res.render('home',{model:results})
-})
+//     res.render('home',{model:results})
+// })
 
 //PORT
 const PORT = process.env.PORT || 5000;
