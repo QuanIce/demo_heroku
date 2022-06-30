@@ -34,6 +34,10 @@ app.post("/add", async(req, res)=>{
         res.render('add', { 'nameError': 'Name should not be longer than 5 characters' })
         return
     }
+    if (price < 1)
+    {
+        res.render('add', { 'priceError': 'Invalid Price'})
+    }
     let product = {
         'name': name,
         'price': price,
