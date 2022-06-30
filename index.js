@@ -31,12 +31,8 @@ app.post("/add", async(req, res)=>{
     let price = req.body.txtPrice
     let picURL = req.body.txtPicture
     if (name.length <= 6) {
-        res.render('add', { 'nameError': 'Name should not be longer than 5 characters' })
+        res.render('add', { 'nameError': 'Name should not be longer than 5 characters'})
         return
-    }
-    if (price < 1)
-    {
-        res.render('add', { 'priceError': 'Invalid Price'})
     }
     let product = {
         'name': name,
